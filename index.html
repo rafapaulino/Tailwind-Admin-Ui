@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
     <title>Tailwind Admin</title>
 </head>
 <body class="bg-gray-50 font-normal text-gray-950 antialiased flex h-full" x-data="{notificationIsOpen: false}">
@@ -74,7 +78,7 @@
         </header>
 
         <!-- no notifications -->
-        <div class="w-full p-4 flex flex-col items-center justify-center">
+        <div class="hidden w-full p-4 flex flex-col items-center justify-center">
             <div class="mb-5 flex items-center justify-center">
                 <div class="rounded-full bg-gray-100 dark:bg-gray-500/20 fi-color-gray p-4">
                     <i class="fa-regular fa-bell-slash text-gray-500 dark:text-gray-400 text-xl"></i>
@@ -87,6 +91,121 @@
                 </p>
             </div>
         </div>
+        
+        <!-- notifications list -->
+        <div class="w-full py-4 overflow-y-auto h-[calc(100%-100px)] custom-scrollbar">
+            <div class="flex flex-col">
+                <div class="w-full">
+                    <!-- list -->
+                    <ul role="list" class="divide-y divide-gray-100 w-full">
+                        <li class="flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=10&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=09&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=08&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=07&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=061&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=05&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=04&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=03&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="bg-gray-50 flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=02&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                        <li class="flex justify-between gap-x-6 py-5 px-4 hover:bg-gray-100 transition cursor-pointer">
+                            <div class="flex min-w-0 gap-x-4">
+                              <img class="size-12 flex-none rounded-full bg-gray-50" src="https://ui-avatars.com/api/?name=01&color=FFFFFF&background=09090b" alt="">
+                              <div class="min-w-0 flex-auto">
+                                <p class="text-sm/6 font-semibold text-gray-900">Neque porro quisquam est qui dolorem ipsum quia dolor</p>
+                                <p class="mt-1 truncate text-xs/5 text-gray-500">Last seen <time datetime="2023-01-23T13:23Z">2 weeks ago</time></p>
+                              </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- /list -->
+                </div>
+            </div>
+        </div>
+
+        <!-- buttons fixed at the bottom -->
+        <div class="fixed bottom-0 right-0 bg-white w-full border-t border-gray-200 py-4 px-4">
+            <div class="grid grid-cols-2 gap-2.5">
+                <button class="btn btn-sm justify-center font-semibold text-sm py-2 px-3 bg-slate-900 text-white hover:bg-slate-700 rounded">
+                    Show all notifications
+                </button>
+                <button class="btn btn-sm justify-center font-semibold text-sm py-2 px-3 bg-slate-900 text-white hover:bg-slate-700 rounded">
+                    Mark all as read
+                </button>
+            </div>
+        </div>
+        <!-- /buttons fixed at the bottom -->
         
     </div>
     <!-- /notifications -->
