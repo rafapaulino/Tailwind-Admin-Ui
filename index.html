@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Tailwind Admin</title>
 </head>
-<body class="bg-gray-50 font-normal text-gray-950 antialiased flex h-full" x-data="{notificationIsOpen: false}">
+<body class="bg-gray-50 font-normal text-gray-950 antialiased flex h-full" x-data="{notificationIsOpen: false, dropdownIsOpen: false}">
 
     <!-- admin header -->
     <header class="px-4 py-2 bg-white shadow-sm w-full flex items-center">
@@ -38,11 +38,68 @@
                         </span>
                     </a>
                 </li>
-                <li>
+                <li class="relative">
                     <img src="https://ui-avatars.com/api/?name=R+P&color=FFFFFF&background=09090b" 
                          title="Rafael Paulino" 
                          alt="Rafael Paulino" 
-                         class="cursor-pointer fi-avatar object-cover object-center fi-circular rounded-full h-8 w-8 fi-user-avatar border-2 border-green-500 border-solid shrink-0">
+                         class="cursor-pointer object-cover object-center fi-circular rounded-full h-8 w-8 border-2 border-green-500 border-solid shrink-0"
+                         @click="dropdownIsOpen = !dropdownIsOpen">
+                    
+                    <!-- user profile menu -->     
+                    <div class="absolute min-h-[235px] w-[280px] top-0 right-0 z-4 mt-[40px] flex flex-col pt-4 shadow-md bg-white border border-gray-200 rounded-md transition-transform transform duration-300" x-show="dropdownIsOpen">
+                      <!-- header -->
+                      <header class="w-full px-4 border-b border-gray-200 flex items-center gap-2 pb-4">
+                          <img src="https://ui-avatars.com/api/?name=R+P&color=FFFFFF&background=09090b" 
+                              title="Rafael Paulino" 
+                              alt="Rafael Paulino" 
+                              class="object-cover object-center fi-circular rounded-full h-8 w-8 border-2 border-green-500 border-solid shrink-0">
+                          
+                          <div class="flex flex-col gap-1.5">
+                              <span class="text-sm text-gray-800 font-semibold leading-none">
+                                  Rafael Paulino
+                              </span>
+                              <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none" href="mailto:rafaclasses@gmail.com" title="Send me a email!">
+                                  rafaclasses@gmail.com
+                              </a>
+                          </div> 
+                      </header>
+                      <!-- /header -->
+                      
+                      <!-- menu items -->
+                      <ul class="flex flex-col p-0 gap-0">
+                        <li class="flex hover:bg-gray-100 w-full px-4 py-2 m-0">
+                          <a class="flex items-center w-full" href="#" title="">
+                              <span class="flex items-center justify-center box-border bg-white border-gray-300 border w-[35px] h-[35px] rounded-full">
+                                <i class="fa-solid fa-user-large m-0 text-gray-800 text-sm"></i>
+                              </span>
+                              <strong class="ml-3 text-sm text-gray-800 font-semibold leading-none">
+                                My Profile
+                              </strong>
+                          </a>
+                        </li>
+                        <li class="flex hover:bg-gray-100 w-full px-4 py-2 m-0">
+                          <a class="flex items-center w-full" href="#" title="">
+                              <span class="flex items-center justify-center box-border bg-white border-gray-300 border w-[35px] h-[35px] rounded-full">
+                                <i class="fa-regular fa-bell m-0 text-gray-800 text-sm"></i>
+                              </span>
+                              <strong class="ml-3 text-sm text-gray-800 font-semibold leading-none">
+                                Notifications
+                              </strong>
+                          </a>
+                        </li>
+                      </ul>
+                      <!-- /menu items -->
+
+                      <!-- logout -->
+                      <div class="mt-auto bg-white w-full border-t border-gray-200 py-4 px-4">
+                          <button class="btn btn-sm justify-center font-semibold text-sm py-2 px-3 bg-slate-900 text-white hover:bg-slate-700 rounded w-full text-center">
+                              Log out 
+                          </button>
+                      </div>
+                      <!-- /logout -->
+                    </div>
+                    <!-- /user profile menu -->
+
                 </li>
             </ul>
         </nav>
@@ -58,7 +115,9 @@
         x-transition:enter-end="opacity-100"
         x-transition:leave="opacity-100"
         x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"></div>
+        x-transition:leave-end="opacity-0">
+    </div>
+    <!-- /overlay -->
     
     <!-- notifications -->
     <div class="fixed right-0 top-0 z-10 bg-white h-screen border-l border-gray-200 w-1/3 py-2 transition-transform transform duration-300" 
@@ -193,6 +252,7 @@
                 </div>
             </div>
         </div>
+        <!-- /notifications list -->
 
         <!-- buttons fixed at the bottom -->
         <div class="fixed bottom-0 right-0 bg-white w-full border-t border-gray-200 py-4 px-4">
@@ -209,6 +269,8 @@
         
     </div>
     <!-- /notifications -->
+
+
 
 
 </body>
